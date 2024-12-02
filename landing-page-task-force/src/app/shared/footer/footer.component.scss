@@ -1,0 +1,117 @@
+.footer {
+  background-color: #212121; // Fundo escuro
+  color: #eaeaea; // Texto claro
+  padding: 20px 30px;
+  text-align: center;
+
+  .container {
+    display: flex;
+    flex-direction: column; // Alinha os elementos em coluna
+    align-items: center;
+    gap: 20px; // Espaçamento entre seções
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .navigation-section {
+    nav {
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 30px; // Espaçamento entre os links
+
+        li a {
+          color: #eaeaea;
+          text-decoration: none;
+          font-size: 16px;
+          font-weight: 500;
+          transition: color 0.3s;
+
+          &:hover {
+            color: #4caf50; // Cor verde no hover
+          }
+        }
+      }
+    }
+  }
+
+  .social-section {
+    p {
+      margin-bottom: 10px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+
+      a {
+        color: #eaeaea;
+        font-size: 20px;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #4caf50;
+        }
+      }
+    }
+  }
+
+  .legal-section {
+    text-align: center;
+
+    p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .policies {
+      margin-top: 10px;
+
+      a {
+        color: #4caf50;
+        text-decoration: none;
+        font-size: 14px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      span {
+        margin: 0 10px; // Espaçamento entre os links e o separador
+        color: #eaeaea;
+      }
+    }
+  }
+
+  // Responsividade
+  @media (max-width: 768px) {
+    .container {
+      gap: 15px; // Reduz o espaçamento entre seções
+    }
+
+    .navigation-section {
+      nav ul {
+        flex-direction: column; // Alinha os links verticalmente
+        gap: 10px;
+      }
+    }
+
+    .social-section {
+      .social-icons {
+        justify-content: center; // Centraliza os ícones
+      }
+    }
+
+    .legal-section {
+      p,
+      .policies a {
+        font-size: 12px; // Texto menor no responsivo
+      }
+    }
+  }
+}

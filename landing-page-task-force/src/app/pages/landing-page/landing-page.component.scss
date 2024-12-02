@@ -1,110 +1,121 @@
 .landing-page {
-    font-family: Arial, sans-serif;
-    color: #333;
-    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px; /* Espaçamento horizontal entre as seções */
+    padding: 20px 40px; /* Reduzido o padding superior */
+    margin-top: 0; /* Remove margem extra */
+    max-width: 1200px; /* Largura máxima para centralizar */
+    margin-left: auto;
+    margin-right: auto;
   
     .demo-section,
-    .benefits-section,
-    .cta-section {
-      margin-bottom: 40px;
-    }
-  
-    .demo-section form {
+    .benefits-section {
+      flex: 1;
+      max-width: 500px;
+      padding: 30px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      align-items: center; /* Centraliza o conteúdo */
   
-      .form-row {
-        display: flex;
-        gap: 10px;
+      h2, h3 {
+        text-align: center;
+        font-size: 1.8rem;
+        color: #2b7a2b;
+        margin-bottom: 20px;
+      }
   
-        input,
-        select {
-          flex: 1;
-          padding: 10px;
-          border: 1px solid #ccc;
-          border-radius: 5px;
+      form, ul {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+  
+      ul {
+        list-style: none;
+        font-size: 1.2rem;
+        color: #333;
+  
+        li {
+          margin: 15px 0;
+          display: flex;
+          align-items: center;
+  
+          &:before {
+            content: "✔";
+            margin-right: 10px;
+            color: #2b7a2b;
+            font-size: 1.4rem;
+          }
+        }
+      }
+  
+      button {
+        width: 100%;
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #2b7a2b;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #226622;
+        }
+      }
+  
+      input, select {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        transition: border-color 0.3s ease;
+  
+        &:focus {
+          border-color: #2b7a2b;
+          outline: none;
         }
       }
   
       .checkbox {
         display: flex;
         align-items: center;
-        gap: 5px;
+        gap: 10px;
+        margin-top: 10px;
   
         label {
-          font-size: 14px;
+          font-size: 1rem;
         }
-      }
   
-      button {
-        padding: 10px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-  
-        &:hover {
-          background-color: #0056b3;
+        input {
+          accent-color: #2b7a2b;
         }
       }
     }
+  }
   
-    .benefits-section ul {
-      list-style: none;
-      padding: 0;
+  header + .landing-page {
+    margin-top: -20px; /* Ajusta o espaço entre o header e a landing-page */
+  }
   
-      li {
-        margin: 10px 0;
-        display: flex;
-        align-items: center;
-  
-        &:before {
-          content: "✔";
-          margin-right: 10px;
-          color: green;
-        }
-      }
+  @media (max-width: 768px) {
+    .landing-page {
+      flex-direction: column; /* Empilha as seções em telas menores */
+      gap: 30px;
+      padding: 20px;
     }
   
-    .cta-section {
-      text-align: center;
-  
-      .cta-buttons {
-        margin-top: 20px;
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-  
-        button {
-          padding: 10px 20px;
-          font-size: 16px;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-  
-          &:first-child {
-            background-color: green;
-            color: white;
-  
-            &:hover {
-              background-color: #006400;
-            }
-          }
-  
-          &:last-child {
-            background-color: transparent;
-            border: 2px solid green;
-            color: green;
-  
-            &:hover {
-              background-color: green;
-              color: white;
-            }
-          }
-        }
-      }
+    .demo-section, .benefits-section {
+      max-width: 100%;
     }
   }
   

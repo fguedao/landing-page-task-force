@@ -1,1 +1,84 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: 'Poppins', sans-serif; /* Fonte principal */
+    margin: 0;
+    padding: 0;
+    color: #333; /* Cor do texto */
+    background-color: #f9f9f9; /* Cor de fundo */
+    line-height: 1.6; /* Ajuste o espaçamento entre linhas para melhorar a legibilidade */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o body ocupe toda a altura da janela */
+  }
+  
+  html {
+    scroll-behavior: smooth; /* Rolagem suave para âncoras */
+  }
+  
+  section {
+    scroll-margin-top: 70px; /* Deslocamento para considerar um header fixo */
+    padding: 40px 20px; /* Espaçamento interno geral para seções */
+  }
+  
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .content {
+    flex: 1; /* Garante que o conteúdo ocupe todo o espaço restante */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    gap: 40px; /* Espaçamento entre elementos */
+  }
+  
+  footer {
+    background-color: #333; /* Fundo do footer */
+    color: #fff; /* Texto branco */
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: auto; /* Garante que o footer fique no final da página */
+  }
+  
+  a {
+    color: #2b7a2b; /* Verde para links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  
+    &:hover {
+      color: #226622; /* Verde mais escuro no hover */
+    }
+  }
+  
+  button {
+    font-family: inherit;
+    padding: 10px 20px;
+    background-color: #2b7a2b; /* Cor do botão */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #226622; /* Cor mais escura no hover */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    section {
+      padding: 20px 10px; /* Reduz o padding em telas menores */
+    }
+  
+    button {
+      width: 100%; /* Botões ocupam toda a largura em telas pequenas */
+    }
+  
+    footer {
+      font-size: 12px; /* Texto menor no footer em telas pequenas */
+    }
+  }
+  

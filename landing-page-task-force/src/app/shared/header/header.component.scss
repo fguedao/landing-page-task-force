@@ -1,0 +1,132 @@
+.header {
+  background-color: #212121; // Fundo cinza escuro
+  color: #eaeaea; // Cor do texto clara
+  padding: 15px 30px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); // Sombra elegante
+  position: fixed; // Fixo no topo
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      flex-direction: column; // Alinha verticalmente no responsivo
+      align-items: center;
+      padding: 10px 0;
+    }
+  }
+
+  .logo img {
+    max-height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1); // Animação ao passar o mouse
+    }
+
+    @media (max-width: 768px) {
+      max-height: 40px; // Reduz o tamanho do logo no responsivo
+      margin-bottom: 10px;
+    }
+  }
+
+  nav ul {
+    list-style: none; // Remove os marcadores
+    display: flex; // Exibe itens na horizontal
+    gap: 30px; // Espaçamento entre itens
+    margin: 0;
+    padding: 0;
+
+    @media (max-width: 768px) {
+      flex-direction: column; // Alinha o menu verticalmente no responsivo
+      gap: 15px;
+      align-items: center;
+    }
+
+    li a {
+      color: #eaeaea; // Texto claro
+      text-decoration: none; // Remove sublinhado
+      font-size: 18px;
+      font-weight: 500;
+      padding: 5px 10px; // Aumenta área clicável
+      border-radius: 5px; // Bordas arredondadas
+      transition: background-color 0.3s, color 0.3s;
+
+      &:hover {
+        background-color: #4caf50; // Fundo verde no hover
+        color: #fff; // Texto branco
+      }
+
+      @media (max-width: 768px) {
+        font-size: 16px; // Diminui o tamanho do texto no responsivo
+        padding: 5px 0; // Reduz o padding no responsivo
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @media (max-width: 768px) {
+      flex-direction: column; // Alinha os botões e ícones verticalmente
+      gap: 15px;
+      margin-top: 15px; // Adiciona espaço no topo
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+
+      a {
+        color: #eaeaea; // Ícones brancos
+        font-size: 20px;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #4caf50; // Verde ao passar o mouse
+        }
+
+        @media (max-width: 768px) {
+          font-size: 18px; // Ícones menores no responsivo
+        }
+      }
+    }
+
+    .btn-login {
+      background-color: #4caf50; // Verde limão
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.2s;
+
+      &:hover {
+        background-color: #45a047; // Tom mais escuro no hover
+        transform: scale(1.05); // Efeito de leve aumento no hover
+      }
+
+      @media (max-width: 768px) {
+        font-size: 14px; // Reduz a fonte do botão no responsivo
+        padding: 8px 15px; // Botão mais compacto
+      }
+    }
+  }
+
+  // Header fixo apenas no desktop
+  @media (max-width: 768px) {
+    position: static; // Remove o comportamento fixo no mobile
+    top: auto;
+  }
+}

@@ -1,121 +1,142 @@
 .landing-page {
+  display: flex;
+  justify-content: space-between; /* Espaço igual entre as seções */
+  align-items: flex-start; /* Alinha as seções no topo */
+  gap: 30px; /* Espaçamento horizontal entre as seções */
+  padding: 10px 40px; /* Reduzi o padding superior */
+  margin-top: -10px; /* Remove o espaço extra entre o header e a seção */
+  max-width: 1200px; /* Centraliza e limita a largura máxima */
+  margin-left: auto;
+  margin-right: auto;
+
+  .demo-section,
+  .benefits-section {
+    flex: 1;
+    max-width: 48%; /* As seções dividem igualmente o espaço horizontal */
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px; /* Espaçamento horizontal entre as seções */
-    padding: 20px 40px; /* Reduzido o padding superior */
-    margin-top: 0; /* Remove margem extra */
-    max-width: 1200px; /* Largura máxima para centralizar */
-    margin-left: auto;
-    margin-right: auto;
-  
-    .demo-section,
-    .benefits-section {
-      flex: 1;
-      max-width: 500px;
-      padding: 30px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      display: flex;
-      flex-direction: column;
-      align-items: center; /* Centraliza o conteúdo */
-  
-      h2, h3 {
-        text-align: center;
-        font-size: 1.8rem;
-        color: #2b7a2b;
-        margin-bottom: 20px;
-      }
-  
-      form, ul {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-      }
-  
-      ul {
-        list-style: none;
-        font-size: 1.2rem;
-        color: #333;
-  
-        li {
-          margin: 15px 0;
-          display: flex;
-          align-items: center;
-  
-          &:before {
-            content: "✔";
-            margin-right: 10px;
-            color: #2b7a2b;
-            font-size: 1.4rem;
-          }
-        }
-      }
-  
-      button {
-        width: 100%;
-        margin-top: 20px;
-        padding: 15px;
-        background-color: #2b7a2b;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        font-size: 1.2rem;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-  
-        &:hover {
-          background-color: #226622;
-        }
-      }
-  
-      input, select {
-        width: 100%;
-        padding: 15px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 1.1rem;
-        margin-bottom: 15px;
-        transition: border-color 0.3s ease;
-  
-        &:focus {
-          border-color: #2b7a2b;
-          outline: none;
-        }
-      }
-  
-      .checkbox {
+    flex-direction: column;
+    align-items: center;
+
+    h2, h3 {
+      text-align: center;
+      font-size: 1.8rem;
+      color: #2b7a2b;
+      margin-bottom: 20px;
+    }
+
+    form, ul {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+      font-size: 1.2rem;
+      color: #333;
+
+      li {
+        margin: 15px 0;
         display: flex;
         align-items: center;
-        gap: 10px;
-        margin-top: 10px;
-  
-        label {
-          font-size: 1rem;
-        }
-  
-        input {
-          accent-color: #2b7a2b;
+
+        &:before {
+          content: "✔";
+          margin-right: 10px;
+          color: #2b7a2b;
+          font-size: 1.4rem;
         }
       }
     }
-  }
-  
-  header + .landing-page {
-    margin-top: -20px; /* Ajusta o espaço entre o header e a landing-page */
-  }
-  
-  @media (max-width: 768px) {
-    .landing-page {
-      flex-direction: column; /* Empilha as seções em telas menores */
-      gap: 30px;
-      padding: 20px;
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #2b7a2b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #226622;
+      }
     }
-  
-    .demo-section, .benefits-section {
-      max-width: 100%;
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        border-color: #2b7a2b;
+        outline: none;
+      }
+    }
+
+    .checkbox {
+      display: flex;
+      align-items: center; /* Alinha verticalmente o checkbox e o texto */
+      gap: 10px; /* Espaçamento entre o checkbox e o texto */
+    
+      input[type="checkbox"] {
+        appearance: none; /* Remove o estilo padrão do navegador */
+        width: 20px; /* Tamanho personalizado */
+        height: 20px;
+        border: 2px solid #2b7a2b; /* Borda verde */
+        border-radius: 4px; /* Bordas arredondadas */
+        cursor: pointer; /* Cursor muda para pointer ao passar */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    
+        &:checked {
+          background-color: #2b7a2b; /* Fundo verde quando marcado */
+          border-color: #2b7a2b;
+        }
+    
+        &:checked::before {
+          content: "✔"; /* Ícone de check */
+          color: white;
+          font-size: 14px;
+        }
+    
+        &:focus {
+          outline: none;
+          box-shadow: 0 0 5px rgba(43, 122, 43, 0.5); /* Efeito de foco */
+        }
+      }
+    
+      label {
+        font-size: 1rem; /* Tamanho da fonte do texto */
+        color: #333; /* Cor do texto */
+        cursor: pointer; /* Clicar no texto também marca o checkbox */
+      }
     }
   }
-  
+}    
+
+@media (max-width: 768px) {
+  .landing-page {
+    flex-direction: column; /* Empilha as seções em telas menores */
+    gap: 20px; /* Reduz o espaço entre as seções */
+    padding: 20px;
+  }
+
+  .demo-section, .benefits-section {
+    max-width: 100%;
+  }
+}
